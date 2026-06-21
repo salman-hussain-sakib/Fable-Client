@@ -113,7 +113,7 @@ export default function Navbar() {
         </div>
 
         
-        <div style={{ display: 'none', alignItems: 'center', gap: '12px' }} className="nav-mobile-btn">
+        <div style={{ alignItems: 'center', gap: '12px' }} className="nav-mobile-btn">
           <button
             onClick={toggleTheme}
             className="btn btn-outline"
@@ -130,16 +130,15 @@ export default function Navbar() {
 
       
       {mobileMenuOpen && (
-        <div className="glass" style={{ position: 'absolute', top: '100%', left: '0', right: '0', zIndex: '99', borderTop: '1px solid var(--card-border)', padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div className="mobile-menu glass">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`nav-link ${isActive ? 'active' : ''}`}
                 onClick={() => setMobileMenuOpen(false)}
-                style={{ display: 'block', fontSize: '16px', padding: '8px 0' }}
               >
                 {link.label}
               </Link>
