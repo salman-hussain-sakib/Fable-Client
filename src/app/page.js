@@ -137,17 +137,7 @@ export default function Home() {
         
         <div className="aurora-blob aurora-blob-3" />
 
-        <div
-          className="container"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 480px',
-            gap: '80px',
-            alignItems: 'center',
-            position: 'relative',
-            zIndex: 1,
-          }}
-        >
+        <div className="container hero-grid">
           
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -223,7 +213,7 @@ export default function Home() {
             />
 
             
-            <div style={{ position: 'relative', width: '100%', height: '520px', borderRadius: 'var(--radius-md)', overflow: 'hidden', zIndex: 2, boxShadow: 'var(--shadow-lg), 0 0 60px var(--primary-glow)', border: '1px solid var(--card-border)' }}>
+            <div className="hero-slider-container">
               <AnimatePresence custom={direction} mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -420,7 +410,7 @@ export default function Home() {
             <p style={{ color: 'var(--text-secondary)' }}>Select a genre category to view matching books.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '20px' }}>
+          <div className="genres-grid">
             {genres.map((genre, idx) => (
               <Link key={idx} href={`/browse?genre=${genre.name}`}>
                 <motion.div
@@ -450,7 +440,7 @@ export default function Home() {
             <p style={{ color: 'var(--text-secondary)' }}>Meet the talented authors with the highest ebook publication engagement.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+          <div className="top-writers-grid">
             {topWriters.map((writer, idx) => (
               <motion.div
                 key={idx}
