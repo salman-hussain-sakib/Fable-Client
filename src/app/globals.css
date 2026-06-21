@@ -1008,19 +1008,32 @@ img {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--card-border);
-    padding: 20px 16px;
-    gap: 16px;
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .dashboard-aside-menu > div:first-child {
+    display: none !important;
   }
   
   .dashboard-aside-nav {
     flex-direction: row;
-    flex-wrap: wrap;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
     gap: 8px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  
+  .dashboard-aside-nav::-webkit-scrollbar {
+    display: none;
   }
   
   .dashboard-sidebar-link {
     font-size: 13px;
     padding: 8px 14px;
+    flex-shrink: 0;
   }
   
   .dashboard-main-section {
@@ -1116,5 +1129,80 @@ img {
   
   .payment-method-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* TABLE RESPONSIVENESS & STYLING */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.custom-table th {
+  padding: 14px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.custom-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table tr {
+  transition: background var(--transition-fast) ease;
+}
+
+.custom-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='light'] .custom-table tr:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* DASHBOARD GRIDS RESPONSIVE OVERRIDES */
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+.dashboard-responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-responsive-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 }

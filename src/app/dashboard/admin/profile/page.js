@@ -112,7 +112,7 @@ export default function AdminProfile() {
         <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Manage your profile information and settings</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', alignItems: 'start' }}>
+      <div className="dashboard-responsive-grid" style={{ alignItems: 'start' }}>
         <div className="glass" style={{ padding: '40px 30px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', borderRadius: 'var(--radius-md)', gap: '24px' }}>
           <div 
             style={{ 

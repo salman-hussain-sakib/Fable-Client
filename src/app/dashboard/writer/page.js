@@ -85,7 +85,7 @@ export default function WriterManageEbooks() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
         <div>
           <h2 style={{ fontSize: '28px', fontWeight: '800', marginBottom: '6px', color: 'var(--text-primary)' }}>Manage My Ebooks</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Track, update, and manage your published works.</p>
@@ -96,7 +96,7 @@ export default function WriterManageEbooks() {
         </Link>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+      <div className="dashboard-stats-grid">
         {[
           { label: 'Total Ebooks', value: stats.total, icon: <FileText size={20} />, color: 'var(--primary)', bg: 'var(--primary-glow)' },
           { label: 'Published', value: stats.published, icon: <Eye size={20} />, color: '#10b981', bg: 'rgba(16, 185, 129, 0.15)' },
@@ -127,9 +127,8 @@ export default function WriterManageEbooks() {
           </Link>
         </div>
       ) : (
-        <div className="glass" style={{ borderRadius: 'var(--radius-md)', border: '1px solid var(--card-border)', boxShadow: 'var(--shadow-md)', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="glass table-container">
+          <table className="custom-table">
               <thead>
                 <tr style={{ background: 'var(--bg-tertiary)', borderBottom: '1px solid var(--card-border)' }}>
                   <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '12px', fontWeight: '700', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Cover</th>
@@ -219,7 +218,6 @@ export default function WriterManageEbooks() {
                 ))}
               </tbody>
             </table>
-          </div>
         </div>
       )}
     </div>

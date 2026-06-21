@@ -49,7 +49,7 @@ export default function UserProfile() {
 
       <div className="glass" style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '30px', borderRadius: 'var(--radius-md)' }}>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--card-border)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--card-border)', flexWrap: 'wrap' }}>
           {profilePicture ? (
             <img
               src={profilePicture}

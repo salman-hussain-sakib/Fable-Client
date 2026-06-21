@@ -80,7 +80,7 @@ export default function AdminOverview() {
       </div>
 
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
+      <div className="dashboard-stats-grid">
         {statCards.map((card, idx) => (
           <div
             key={idx}
@@ -108,7 +108,7 @@ export default function AdminOverview() {
 
       
       {isMounted && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+        <div className="dashboard-responsive-grid">
           
           <div className="glass" style={{ padding: '30px', borderRadius: 'var(--radius-md)', border: '1px solid var(--card-border)', boxShadow: 'var(--shadow-md)' }}>
             <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)' }}>

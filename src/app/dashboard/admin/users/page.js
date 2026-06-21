@@ -110,9 +110,8 @@ export default function AdminUsers() {
           </p>
         </div>
       ) : (
-        <div className="glass" style={{ borderRadius: 'var(--radius-md)', border: '1px solid var(--card-border)', boxShadow: 'var(--shadow-md)', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="glass table-container">
+          <table className="custom-table">
               <thead>
                 <tr style={{ background: 'var(--bg-tertiary)', borderBottom: '1px solid var(--card-border)' }}>
                   <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '12px', fontWeight: '700', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Profile</th>
@@ -190,7 +189,6 @@ export default function AdminUsers() {
                 ))}
               </tbody>
             </table>
-          </div>
         </div>
       )}
     </div>
