@@ -131,9 +131,9 @@ function BrowseContent() {
       <p style={{ color: 'var(--text-secondary)', marginBottom: '40px' }}>Find original masterpieces uploaded by authors worldwide.</p>
 
       
-      <div style={{ display: 'grid', gridTemplateColumns: '260px 1fr', gap: '40px', alignItems: 'start' }}>
+      <div className="browse-layout-grid">
         
-        <aside className="glass" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '28px', position: 'sticky', top: '90px' }}>
+        <aside className="glass browse-sidebar">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h3 style={{ fontSize: '18px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Filter size={18} />

@@ -875,3 +875,246 @@ img {
     width: 100% !important;
   }
 }
+
+/* EBOOK DETAILS RESPONSIVE LAYOUT */
+.ebook-details-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  padding: 40px;
+  width: 100%;
+}
+
+.ebook-details-grid.loading {
+  grid-template-columns: 300px 1fr;
+}
+
+.purchase-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  margin-top: 10px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.reading-panel {
+  padding: 40px;
+  border-radius: var(--radius-md);
+  border-top: 4px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+  .ebook-details-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 24px;
+  }
+  
+  .ebook-details-grid.loading {
+    grid-template-columns: 1fr;
+  }
+  
+  .reading-panel {
+    padding: 20px;
+  }
+  
+  .purchase-box {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .purchase-box button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* BROWSE PAGE RESPONSIVE LAYOUT */
+.browse-layout-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.browse-sidebar {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 90px;
+}
+
+@media (max-width: 1024px) {
+  .browse-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .browse-sidebar {
+    position: static;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* DASHBOARD LAYOUT RESPONSIVE */
+.dashboard-layout-container {
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 150px);
+  padding-top: 90px;
+}
+
+.dashboard-aside-menu {
+  width: 260px;
+  border-right: 1px solid var(--card-border);
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 0 !important;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-aside-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dashboard-main-section {
+  flex: 1;
+  padding: 40px;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout-container {
+    flex-direction: column;
+    padding-top: 80px;
+  }
+  
+  .dashboard-aside-menu {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--card-border);
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  
+  .dashboard-aside-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .dashboard-sidebar-link {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+  
+  .dashboard-main-section {
+    padding: 24px 16px;
+  }
+}
+
+/* FORM GRID RESPONSIVE */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* GATEWAY PAGE RESPONSIVE */
+.gateway-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, var(--bg-tertiary), var(--bg-primary));
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gateway-card {
+  width: 100%;
+  max-width: 960px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.order-summary-box {
+  padding: 40px;
+  border-right: 1px solid var(--card-border);
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+[data-theme='light'] .order-summary-box {
+  background: rgba(8,145,178,0.02);
+}
+
+.gateway-form-panel {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.payment-method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .gateway-wrapper {
+    padding: 20px 10px;
+  }
+  
+  .gateway-card {
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+  }
+  
+  .order-summary-box {
+    padding: 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--card-border);
+    gap: 20px;
+  }
+  
+  .gateway-form-panel {
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  .payment-method-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

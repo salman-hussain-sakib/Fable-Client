@@ -105,7 +105,7 @@ export default function AddEbook() {
       <div className="glass" style={{ padding: '40px', borderRadius: 'var(--radius-md)' }}>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+          <div className="form-grid">
             <div className="form-group">
               <label className="form-label" htmlFor="ebook-title-input">Ebook Title</label>
               <input
@@ -134,7 +134,7 @@ export default function AddEbook() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'end' }}>
+          <div className="form-grid" style={{ alignItems: 'end' }}>
             <div className="form-group">
               <label className="form-label" htmlFor="price-input">Price (USD)</label>
               <input

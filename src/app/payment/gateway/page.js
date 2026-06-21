@@ -269,7 +269,7 @@ function GatewayContent() {
   };
 
   const orderSummary = (
-    <div style={{ padding: '40px', borderRight: '1px solid var(--card-border)', background: isDark ? 'rgba(0,0,0,0.25)' : 'rgba(8,145,178,0.02)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '30px' }}>
+    <div className="order-summary-box">
       <div>
         <div style={{ marginBottom: '28px' }}>
           <BookOpen size={28} style={{ color: 'var(--primary)', marginBottom: '8px' }} />
@@ -318,11 +318,11 @@ function GatewayContent() {
   );
 
   return (
-    <div style={{ minHeight: '100vh', background: 'radial-gradient(circle at top right, var(--bg-tertiary), var(--bg-primary))', padding: '40px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ width: '100%', maxWidth: '960px', background: 'var(--card-bg)', backdropFilter: 'blur(16px)', border: '1px solid var(--card-border)', borderRadius: '20px', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', display: 'grid', gridTemplateColumns: '1fr 1.2fr' }}>
+    <div className="gateway-wrapper">
+      <div className="gateway-card">
         {orderSummary}
 
-        <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div className="gateway-form-panel">
           {step < 4 && (
             <div>
               <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '4px' }}>Payment Method</h3>
@@ -331,7 +331,7 @@ function GatewayContent() {
           )}
 
           {step < 4 && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
+            <div className="payment-method-grid">
               {[
                 { id: 'bkash', name: 'bKash', color: '#e2125f' },
                 { id: 'nagad', name: 'Nagad', color: '#f69220' },

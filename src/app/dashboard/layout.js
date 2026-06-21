@@ -63,9 +63,9 @@ export default function DashboardLayout({ children }) {
   const navItems = getSidebarItems();
 
   return (
-    <div style={{ flex: '1', display: 'flex', minHeight: 'calc(100vh - 150px)', paddingTop: '90px' }}>
+    <div className="dashboard-layout-container">
       
-      <aside className="glass" style={{ width: '260px', borderRight: '1px solid var(--card-border)', padding: '32px 16px', display: 'flex', flexDirection: 'column', gap: '24px', borderRadius: '0', flexShrink: '0', boxShadow: 'var(--shadow-sm)' }}>
+      <aside className="glass dashboard-aside-menu">
         <div style={{ padding: '0 12px' }}>
           <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-muted)', fontWeight: '700', display: 'block', marginBottom: '6px' }}>Role Control</span>
           <h3 style={{ fontSize: '22px', fontWeight: '800', textTransform: 'capitalize', color: 'var(--primary)', margin: 0, lineHeight: '1.2' }}>
@@ -73,25 +73,14 @@ export default function DashboardLayout({ children }) {
           </h3>
         </div>
 
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+        <nav className="dashboard-aside-nav">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className="dashboard-sidebar-link"
-                style={{
-                  justifyContent: 'flex-start',
-                  padding: '12px 16px',
-                  fontSize: '14px',
-                  fontWeight: isActive ? '600' : '500',
-                  borderRadius: 'var(--radius-sm)',
-                  background: isActive ? 'var(--primary-glow)' : 'transparent',
-                  color: isActive ? 'var(--primary)' : 'var(--text-secondary)',
-                  border: isActive ? '1px solid var(--primary)' : '1px solid transparent',
-                  transition: 'all var(--transition-fast) ease',
-                }}
+                className={`dashboard-sidebar-link ${isActive ? 'active' : ''}`}
               >
                 <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   {item.icon}
@@ -104,7 +93,7 @@ export default function DashboardLayout({ children }) {
       </aside>
 
       
-      <section style={{ flex: '1', padding: '40px', backgroundColor: 'var(--bg-primary)', overflowX: 'hidden' }}>
+      <section className="dashboard-main-section">
         {children}
       </section>
     </div>

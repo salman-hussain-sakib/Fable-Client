@@ -153,7 +153,7 @@ export default function EbookDetails() {
   if (loading) {
     return (
       <div className="container section-padding" style={{ maxWidth: '900px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '40px' }}>
+        <div className="ebook-details-grid loading">
           <div className="skeleton skeleton-img" style={{ borderRadius: 'var(--radius-md)' }} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div className="skeleton skeleton-title" style={{ width: '40%' }} />
@@ -194,9 +194,9 @@ export default function EbookDetails() {
       </button>
 
       
-      <div className="glass" style={{ padding: '40px', display: 'grid', gridTemplateColumns: '280px 1fr', gap: '40px', borderRadius: 'var(--radius-md)', marginBottom: '40px', alignItems: 'start' }}>
+      <div className="glass ebook-details-grid" style={{ borderRadius: 'var(--radius-md)', marginBottom: '40px', alignItems: 'start' }}>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
           <div style={{ width: '100%', aspectRatio: '1.3/1.7', borderRadius: 'var(--radius-sm)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
             <img src={ebook.coverImage} alt={ebook.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
@@ -259,7 +259,7 @@ export default function EbookDetails() {
             <p style={{ fontSize: '15px', color: 'var(--text-primary)', lineHeight: '1.6' }}>{ebook.previewDescription}</p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifySelf: 'flex-end', justifyContent: 'space-between', padding: '20px', background: 'var(--bg-tertiary)', borderRadius: 'var(--radius-sm)', marginTop: '10px' }}>
+          <div className="purchase-box">
             <div>
               <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>Purchase Price</span>
               <div style={{ fontSize: '26px', fontWeight: '800', color: 'var(--primary)' }}>${ebook.price.toFixed(2)}</div>
@@ -290,7 +290,7 @@ export default function EbookDetails() {
       </div>
 
       
-      <div className="glass" style={{ padding: '40px', borderRadius: 'var(--radius-md)', borderTop: '4px solid var(--primary)' }}>
+      <div className="glass reading-panel">
         <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <BookOpen size={20} style={{ color: 'var(--primary)' }} />
           <span>Ebook Reading Panel</span>
@@ -390,7 +390,7 @@ export default function EbookDetails() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <h4 style={{ fontSize: '13px', fontWeight: '700', color: 'var(--text-secondary)' }}>Select Payment Method</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
+                <div className="payment-method-grid">
                   {[
                     { id: 'bkash', name: 'bKash', color: '#e2125f' },
                     { id: 'nagad', name: 'Nagad', color: '#f69220' },
