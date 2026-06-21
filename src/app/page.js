@@ -184,7 +184,7 @@ export default function Home() {
             </div>
 
             
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginTop: '4px' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '4px' }}>
               <Link href="/browse" className="btn btn-primary" id="btn-browse-hero" style={{ padding: '15px 32px', fontSize: '15px' }}>
                 Browse Ebooks
                 <ArrowRight size={16} />
